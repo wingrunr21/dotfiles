@@ -71,15 +71,15 @@ function xtitle {  # change the title of your xterm* window
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 
-if $OS = 'Windows_NT'
+if [ $PLATFORM = 'Darwin' ]; then
+  alias sites='cd ~/Sites'
+  alias proj='cd ~/Projects'
+else
   alias sites='cd /f/documents/sites'
   alias proj='cd /f/documents/projects'
   alias gvim='/c/Program\ Files\ \(x86\)/Vim/vim73/gvim'
   alias ls="ls --color=auto"
-else
-  alias sites='cd ~/Sites'
-  alias proj='cd ~/Projects'
-end
+fi
 
 # Other aliases ----------------------------------------------------
 alias ll='ls -hl'
