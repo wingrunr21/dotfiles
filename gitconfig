@@ -1,0 +1,13 @@
+[user]
+  name = Stafford Brunk
+  email = wingrunr21@gmail.com
+[core]
+  excludesfile = ~/.gitignore_global
+  editor = gvim
+[color]
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
+[apply]
+  whitespace = fix
