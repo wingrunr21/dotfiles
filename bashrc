@@ -1,4 +1,4 @@
-# See following for more information: http://www.infinitered.com/blog/?p=19
+# OS Specific Imports
 
 # Colors ----------------------------------------------------------
 export TERM=xterm-color
@@ -45,28 +45,41 @@ fi
 
 
 # Prompts ----------------------------------------------------------
-export PS1="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w > \[${COLOR_NC}\]"  # Primary prompt with user, host, and path 
+function prompt {
+  previous_return_value=$?;
+  prompt="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w\[${COLOR_RED}\]$(__git_ps1)\[${COLOR_GREEN}\]"
+  
+  if test $previous_return_value -eq 0
+  then
+      PS1="${prompt}\[${COLOR_GREEN}\] > \[${COLOR_NC}\]"
+  else
+      PS1="${prompt}\[${COLOR_RED}\] > \[${COLOR_NC}\]"
+  fi
+}
+PROMPT_COMMAND=prompt
 
-# This runs before the prompt and sets the title of the xterm* window.  If you set the title in the prompt
-# weird wrapping errors occur on some systems, so this method is superior
-export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME%%.*} ${PWD}"; echo -ne "\007"'  # user@host path
-
-export PS2='> '    # Secondary prompt
-export PS3='#? '   # Prompt 3
-export PS4='+'     # Prompt 4
+export PS2='> ' # Secondary prompt
+export PS3='#? ' # Prompt 3
+export PS4='+' # Prompt 4
 
 function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
   echo -ne "\033]0;$1\007" 
 }
 
-
-
 # Navigation -------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
-alias sites='cd ~/Sites'
-alias proj='cd ~/Projects'
+
+if $OS = 'Windows_NT'
+  alias sites='cd /f/documents/sites'
+  alias proj='cd /f/documents/projects'
+  alias gvim='/c/Program\ Files\ \(x86\)/Vim/vim73/gvim'
+  alias ls="ls --color=auto"
+else
+  alias sites='cd ~/Sites'
+  alias proj='cd ~/Projects'
+end
 
 # Other aliases ----------------------------------------------------
 alias ll='ls -hl'
