@@ -1,5 +1,3 @@
-# IRBRC file by Iain Hecker, http://iain.nl
-# put all this in your ~/.irbrc
 require 'rubygems'
 require 'yaml'
 
@@ -125,6 +123,10 @@ end
 
 extend_console 'interactive_editor' do
   # no configuration needed
+end
+
+extend_console 'bond' do
+  Bond.start
 end
 
 # Show results of all extension-loading
