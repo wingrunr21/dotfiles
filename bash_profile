@@ -17,6 +17,8 @@ source ~/.bashrc
 if [ $PLATFORM = 'Darwin' ]; then
   VERSION=`git --version | cut -d' '  -f3 -`
   source /usr/local/Cellar/git/$VERSION/etc/bash_completion.d/git-completion.bash
+elif [ $PLATFORM = 'Linux' ]; then
+  source /usr/share/bash-completion/git
 else
   source /c/Program\ Files\ \(x86\)/Git/etc/git-completion.bash
 fi
@@ -28,7 +30,7 @@ echo -e "`bash --version`"
 echo -ne "Uptime: "; uptime
 echo -ne "Server time is: "; date
 
-if [ $PLATFORM = 'Darwin' ]; then
+if [ $PLATFORM = 'Darwin' -o $PLATFORM = 'Linux' ]; then
   if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
 else
   if [[ -s $USERPROFILE/.pik/.pikrc ]]  ; then source $USERPROFILE/.pik/.pikrc ; fi

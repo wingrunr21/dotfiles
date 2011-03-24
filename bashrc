@@ -74,6 +74,9 @@ alias ...='cd .. ; cd ..'
 if [ $PLATFORM = 'Darwin' ]; then
   alias sites='cd ~/Sites'
   alias proj='cd ~/Projects'
+elif [ $PLATFORM = 'Linux' ]; then
+  alias sites='cd ~/sites'
+  alias proj='cd ~/projects'
 else
   alias sites='cd /f/documents/sites'
   alias proj='cd /f/documents/projects'
