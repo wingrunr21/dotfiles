@@ -125,9 +125,5 @@ extend_console 'interactive_editor' do
   # no configuration needed
 end
 
-extend_console 'bond' do
-  Bond.start
-end
-
 # Show results of all extension-loading
 puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
