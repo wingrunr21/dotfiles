@@ -1,11 +1,12 @@
-# OS Specific Imports
-
 # Colors ----------------------------------------------------------
-export TERM=xterm-color
+if [ $PLATFORM = 'Darwin' -o $PLATFORM = 'Linux' ]; then
+  export TERM=xterm-color
+  export CLICOLOR=1
+else
+  TERM=msys
+fi
 
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-
-export CLICOLOR=1 
+export GREP_OPTIONS='--color=auto'
 
 # Setup some colors to use later in interactive shell or scripts
 export COLOR_NC='\033[0m' # No Color
@@ -74,6 +75,9 @@ alias ...='cd .. ; cd ..'
 if [ $PLATFORM = 'Darwin' ]; then
   alias sites='cd ~/Sites'
   alias proj='cd ~/Projects'
+elif [ $PLATFORM = 'Linux' ]; then
+  alias sites='cd ~/sites'
+  alias proj='cd ~/projects'
 else
   alias sites='cd /f/documents/sites'
   alias proj='cd /f/documents/projects'
@@ -132,7 +136,13 @@ alias m='more'
 alias df='df -h'
 
 # Editors ----------------------------------------------------------
-export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+if [ $PLATFORM = 'Darwin' ]; then
+  export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+elif [ $PLATFORM = 'Linux' ]; then
+  export EDITOR='nano'
+else
+  export EDITOR='e -w'
+fi
 
 # Subversion & Diff ------------------------------------------------
 export SV_USER='wingrunr21'  # Change this to your username that you normally use on subversion (only if it is different from your logged in name)

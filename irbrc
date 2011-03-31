@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'yaml'
+require 'rbconfig'
 
 alias q exit
 
@@ -7,6 +8,10 @@ class Object
   def local_methods
     (methods - Object.instance_methods).sort
   end
+end
+
+if RbConfig::CONFIG['host_os'] =~ /mswin|mingw/
+ require 'win32/console/ansi'
 end
 
 ANSI = {}
