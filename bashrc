@@ -68,6 +68,8 @@ function xtitle {  # change the title of your xterm* window
   echo -ne "\033]0;$1\007" 
 }
 
+alias t=terminitor
+
 # Navigation -------------------------------------------------------
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
@@ -137,11 +139,11 @@ alias df='df -h'
 
 # Editors ----------------------------------------------------------
 if [ $PLATFORM = 'Darwin' ]; then
-  export EDITOR='mate -w'  # OS-X SPECIFIC - TextMate, w is to wait for TextMate window to close
+  export EDITOR='mvim -w'
 elif [ $PLATFORM = 'Linux' ]; then
-  export EDITOR='nano'
+  export EDITOR='vim -w'
 else
-  export EDITOR='e -w'
+  export EDITOR='gvim -w'
 fi
 
 # Subversion & Diff ------------------------------------------------
