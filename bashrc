@@ -139,7 +139,8 @@ alias df='df -h'
 
 # Editors ----------------------------------------------------------
 if [ $PLATFORM = 'Darwin' ]; then
-  export EDITOR='mvim -w'
+  export EDITOR='mvim -f'
+  export VISUAL='mvim -f'
 elif [ $PLATFORM = 'Linux' ]; then
   export EDITOR='vim -w'
 else
