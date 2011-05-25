@@ -3,7 +3,6 @@
   email = wingrunr21@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
-  editor = vim
 [color]
   branch = auto
   diff = auto
