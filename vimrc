@@ -5,7 +5,7 @@ if has("win32")
 elseif has("unix")
   source ~/.vim/vimrc
   
-  let s:uname = system("uname")
+  let s:uname = system("echo -n \"$(uname)\"")
   if s:uname == "Darwin"
     cd ~/Sites
   elseif s:uname == "Linux"
