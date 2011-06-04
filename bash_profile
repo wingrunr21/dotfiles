@@ -33,8 +33,14 @@ echo -ne "Uptime: "; uptime
 echo -ne "Server time is: "; date
 
 #Load pik or RVM
-if [ $PLATFORM = 'Darwin' -o $PLATFORM = 'Linux' ]; then
+if [ $PLATFORM = 'Darwin' ]; then
   if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
+elif [ $PLATFORM = 'Linux' ]; then
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then 
+    source "$HOME/.rvm/scripts/rvm" 
+  elif [[ -s "/opt/rvm/scripts/rvm" ]]  ; then
+    source "/opt/rvm/scripts/rvm"
+  fi
 else
   if [[ -s "$USERPROFILE/.pik/.pikrc" ]]  ; then source "$USERPROFILE/.pik/.pikrc" ; fi
 fi

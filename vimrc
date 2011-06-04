@@ -2,9 +2,15 @@ if has("win32")
   source ~/vimfiles/vimrc
   cd F:\Documents\Sites
   let g:ruby_path = 'C:\Ruby192\bin'
-else
+elseif has("unix")
   source ~/.vim/vimrc
-  cd ~/Sites
+  
+  let s:uname = system("uname")
+  if s:uname == "Darwin"
+    cd ~/Sites
+  elseif s:uname == "Linux"
+    cd ~
+  end
 end
 
 colorscheme ir_black
