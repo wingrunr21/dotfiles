@@ -2,8 +2,10 @@ if [ -d ~/bin ]; then
 	export PATH=:~/bin:$PATH  # add your bin folder to the path, if you have it.  It's a good place to add all your scripts
 fi
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-    . `brew --prefix`/etc/bash_completion
+if [ hash brew 2>&- ]; then
+  if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+  fi
 fi
 
 export PLATFORM=`uname -s`
@@ -36,8 +38,8 @@ echo -ne "Server time is: "; date
 if [ $PLATFORM = 'Darwin' ]; then
   if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
 elif [ $PLATFORM = 'Linux' ]; then
-  if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then 
-    source "$HOME/.rvm/scripts/rvm" 
+  if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then
+    source "$HOME/.rvm/scripts/rvm"
   elif [[ -s "/opt/rvm/scripts/rvm" ]]  ; then
     source "/opt/rvm/scripts/rvm"
   fi
