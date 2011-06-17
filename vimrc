@@ -19,4 +19,6 @@ imap jj <Esc>
 
 let NERDTreeChDirMode=2
 
+match Todo /\s\+$/
+
 set directory=~/.vim/swapfiles
