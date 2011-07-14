@@ -1,5 +1,5 @@
 # Colors ----------------------------------------------------------
-if [ $PLATFORM = 'Darwin' -o $PLATFORM = 'Linux' ]; then
+if [ "$PLATFORM" = 'Darwin' -o "$PLATFORM" = 'Linux' ]; then
   export TERM=xterm-color
   export CLICOLOR=1
 else
@@ -33,23 +33,21 @@ alias colorslist="set | egrep 'COLOR_\w*'"  # Lists all the colors, uses vars in
 export HISTCONTROL=ignoredups
 shopt -s checkwinsize # After each command, checks the windows size and changes lines and columns
 
-# bash completion settings (actually, these are readline settings)
-bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
-bind "set bell-style none" # no bell
-bind "set show-all-if-ambiguous On" # show list automatically, without double tab
-
 # Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-
+# bash completion settings (actually, these are readline settings)
+bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
+bind "set bell-style none" # no bell
+bind "set show-all-if-ambiguous On" # show list automatically, without double tab
 
 # Prompts ----------------------------------------------------------
 function prompt {
   previous_return_value=$?;
   prompt="\[${COLOR_GRAY}\]\u@\h \[${COLOR_GREEN}\]\w\[${COLOR_RED}\]$(__git_ps1)\[${COLOR_GREEN}\]"
-  
+
   if test $previous_return_value -eq 0
   then
       PS1="${prompt}\[${COLOR_GREEN}\] > \[${COLOR_NC}\]"
@@ -65,7 +63,7 @@ export PS4='+' # Prompt 4
 
 function xtitle {  # change the title of your xterm* window
   unset PROMPT_COMMAND
-  echo -ne "\033]0;$1\007" 
+  echo -ne "\033]0;$1\007"
 }
 
 alias t=terminitor
@@ -74,10 +72,10 @@ alias t=terminitor
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 
-if [ $PLATFORM = 'Darwin' ]; then
+if [ "$PLATFORM" = 'Darwin' ]; then
   alias sites='cd ~/Sites'
   alias proj='cd ~/Projects'
-elif [ $PLATFORM = 'Linux' ]; then
+elif [ "$PLATFORM" = 'Linux' ]; then
   alias sites='cd ~/sites'
   alias proj='cd ~/projects'
 else
@@ -138,10 +136,10 @@ alias m='more'
 alias df='df -h'
 
 # Editors ----------------------------------------------------------
-if [ $PLATFORM = 'Darwin' ]; then
+if [ "$PLATFORM" = 'Darwin' ]; then
   export EDITOR='mvim -f'
   export VISUAL='mvim -f'
-elif [ $PLATFORM = 'Linux' ]; then
+elif [ "$PLATFORM" = 'Linux' ]; then
   export EDITOR='vim -w'
 else
   export EDITOR='gvim -w'
@@ -151,12 +149,12 @@ fi
 export SV_USER='wingrunr21'  # Change this to your username that you normally use on subversion (only if it is different from your logged in name)
 export SVN_EDITOR='${EDITOR}'
 
-alias svshowcommands="echo -e '${COLOR_BROWN}Available commands: 
+alias svshowcommands="echo -e '${COLOR_BROWN}Available commands:
    ${COLOR_GREEN}sv
    ${COLOR_GREEN}sv${COLOR_NC}help
    ${COLOR_GREEN}sv${COLOR_NC}import    ${COLOR_GRAY}Example: import ~/projects/my_local_folder http://svn.foo.com/bar
    ${COLOR_GREEN}sv${COLOR_NC}checkout  ${COLOR_GRAY}Example: svcheckout http://svn.foo.com/bar
-   ${COLOR_GREEN}sv${COLOR_NC}status    
+   ${COLOR_GREEN}sv${COLOR_NC}status
    ${COLOR_GREEN}sv${COLOR_NC}status${COLOR_GREEN}on${COLOR_NC}server
    ${COLOR_GREEN}sv${COLOR_NC}add       ${COLOR_GRAY}Example: svadd your_file
    ${COLOR_GREEN}sv${COLOR_NC}add${COLOR_GREEN}all${COLOR_NC}    ${COLOR_GRAY}Note: adds all files not in repository [recursively]
@@ -167,7 +165,7 @@ alias svshowcommands="echo -e '${COLOR_BROWN}Available commands:
    ${COLOR_GREEN}sv${COLOR_NC}get${COLOR_GREEN}info${COLOR_NC}   ${COLOR_GRAY}Example: svgetinfo your_file
    ${COLOR_GREEN}sv${COLOR_NC}blame     ${COLOR_GRAY}Example: svblame your_file
 '"
-   
+
 alias sv='svn --username ${SV_USER}'
 alias svimport='sv import'
 alias svcheckout='sv checkout'
@@ -178,7 +176,7 @@ alias svcommit='sv commit'
 alias svadd='svn add'
 alias svaddall='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
 alias svdelete='sv delete'
-alias svhelp='svn help' 
+alias svhelp='svn help'
 alias svblame='sv blame'
 
 svgetinfo (){
