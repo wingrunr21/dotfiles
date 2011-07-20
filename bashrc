@@ -1,5 +1,9 @@
 # Colors ----------------------------------------------------------
-if [ "$PLATFORM" = 'Darwin' -o "$PLATFORM" = 'Linux' ]; then
+if [ "$PLATFORM" = 'Darwin' ]; then
+  export CC=/usr/bin/gcc-4.2
+  export TERM=xterm-color
+  export CLICOLOR=1
+elif [ "$PLATFORM" = 'Linux' ]; then
   export TERM=xterm-color
   export CLICOLOR=1
 else
