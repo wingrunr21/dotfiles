@@ -46,3 +46,7 @@ elif [ $PLATFORM = 'Linux' ]; then
 else
   if [[ -s "$USERPROFILE/.pik/.pikrc" ]]  ; then source "$USERPROFILE/.pik/.pikrc" ; fi
 fi
+
+if [ "$rvm_path" ]; then
+  [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
+fi
