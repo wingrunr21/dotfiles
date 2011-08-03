@@ -1,10 +1,10 @@
-if has("win32") 
+if has("win32")
   source ~/vimfiles/vimrc
   cd F:\Documents\Sites
   let g:ruby_path = 'C:\Ruby192\bin'
 elseif has("unix")
   source ~/.vim/vimrc
-  
+
   let s:uname = system("echo -n \"$(uname)\"")
   if s:uname == "Darwin"
     cd ~/Sites
@@ -19,6 +19,10 @@ imap jj <Esc>
 
 let NERDTreeChDirMode=2
 
-match Todo /\s\+$/
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+" Use the same symbols as TextMate for tabstops and EOLs
+set listchars=tab:▸\ ,eol:¬
 
 set directory=~/.vim/swapfiles
