@@ -3,7 +3,12 @@
   email = wingrunr21@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
+[diff]
+  wordRegex = [^[:space:]]
+[format]
+  pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
 [color]
+  ui = auto
   branch = auto
   diff = auto
   status = auto
@@ -11,4 +16,7 @@
 [apply]
   whitespace = fix
 [alias]
-  gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  gl = log --graph --abbrev-commit --date=relative
+  unstage = reset HEAD
+[push]
+  default = current
