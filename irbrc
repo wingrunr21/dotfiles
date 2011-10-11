@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'yaml'
 require 'rbconfig'
+require 'paint'
 
 alias q exit
 
@@ -72,6 +73,10 @@ extend_console 'ap' do
   alias pp ap
 end
 
+extend_console 'fancy_irb' do
+  FancyIrb.start
+end
+
 # When you're using Rails 2 console, show queries in the console
 extend_console 'rails2', (ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')), false do
   require 'logger'
@@ -117,7 +122,7 @@ extend_console 'pm', true, false do
     end
     max_name = data.collect {|item| item[0].size}.max
     max_args = data.collect {|item| item[1].size}.max
-    data.each do |item| 
+    data.each do |item|
       print " #{ANSI[:YELLOW]}#{item[0].to_s.rjust(max_name)}#{ANSI[:RESET]}"
       print "#{ANSI[:BLUE]}#{item[1].ljust(max_args)}#{ANSI[:RESET]}"
       print "   #{ANSI[:GRAY]}#{item[2]}#{ANSI[:RESET]}\n"
@@ -132,3 +137,80 @@ end
 
 # Show results of all extension-loading
 puts "#{ANSI[:GRAY]}~> Console extensions:#{ANSI[:RESET]} #{$console_extensions.join(' ')}#{ANSI[:RESET]}"
+
+# Helper methods
+# From https://github.com/janlelis/irbtools/blob/master/lib/every_day_irb.rb
+
+# shows the contents of your current directory (more such commands available by FileUtils)
+def ls(path='.')
+  Dir[ File.join( path, '*' )].map{|filename| File.basename filename }
+end
+alias dir ls
+
+# read file contents (also see ray for ruby source files ;) )
+def cat(path)
+  File.read path
+end
+
+# allows concise syntax like rq:mathn and reloading/requiring
+def rq(lib)
+  require lib.to_s
+end
+
+# rerequire, not suited for non-rb, please note: can have non-intended side effects in rare cases
+def rerequire(lib)
+  $".dup.each{ |path|
+    if path =~ %r</#{lib}\.rb$>
+      $".delete path.to_s
+      require path.to_s
+    end
+  }
+  require lib.to_s
+  true
+end
+alias rrq rerequire
+
+# load shortcut, not suited for non-rb
+def ld(lib)
+  load lib.to_s + '.rb'
+end
+
+# returns the last lines, needed for some copy_ methods
+def session_history(number_of_lines = nil)
+  if !number_of_lines
+    if defined?(Ripl) && Ripl.respond_to?(:started?) && Ripl.started?
+      number_of_lines = Ripl.shell.line
+    else
+      number_of_lines = context.instance_variable_get(:@line_no)
+    end
+  end
+  Readline::HISTORY.entries[-number_of_lines...-1]*"\n"
+end
+
+# restart irb
+def reset!
+  # remember history...
+  reset_irb = proc{ exec$0 }
+  if defined?(Ripl) && Ripl.respond_to?(:started?) && Ripl.started?
+    Ripl.shell.write_history if Ripl.shell.respond_to? :write_history
+    reset_irb.call
+  else
+    at_exit(&reset_irb)
+    exit
+  end
+end
+
+# just clear the screen
+def clear
+  system 'clear'
+end
+
+# load debugger, inspired by rdp
+def dbg
+  begin
+    require 'ruby-debug'
+    debugger
+  rescue LoadError => err
+    throw "Sorry, unable to load ruby-debug gem for debugger: #{err}"
+  end
+end
