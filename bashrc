@@ -144,7 +144,7 @@ if [ "$PLATFORM" = 'Darwin' ]; then
   export EDITOR='mvim -f'
   export VISUAL='mvim -f'
 elif [ "$PLATFORM" = 'Linux' ]; then
-  export EDITOR='vim -w'
+  export EDITOR='vim'
 else
   export EDITOR='gvim -w'
 fi
