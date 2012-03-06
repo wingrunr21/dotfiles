@@ -3,6 +3,7 @@
   email = wingrunr21@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
+  preloadIndex = true
 [diff]
   wordRegex = [^[:space:]]
 [format]

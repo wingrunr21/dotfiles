@@ -121,7 +121,7 @@ alias ga="git add" # add a file to staging
 alias gr="git rm" # remove a file
 alias gc="git commit" # commit files to repo
 alias gp="git push" # push to repo
-alias gpl="git pull" # pull from repo
+alias gpl="git pull --rebase" # pull from repo
 alias gpom="git push origin master" # typically to send to github
 alias gco="git checkout" # checkout
 alias gb="git branch" # for branching
@@ -187,3 +187,5 @@ svgetinfo (){
  	sv info $@
 	sv log $@
 }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
