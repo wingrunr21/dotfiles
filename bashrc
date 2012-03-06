@@ -139,6 +139,12 @@ alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
 
+# Fix for ack being named ack-grep on Ubuntu
+which ack-grep &> /dev/null
+if [ $? -eq 0 ]; then
+  alias ack='ack-grep'
+fi
+
 # Editors ----------------------------------------------------------
 if [ "$PLATFORM" = 'Darwin' ]; then
   export EDITOR='mvim -f'

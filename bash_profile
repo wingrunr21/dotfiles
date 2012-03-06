@@ -23,7 +23,7 @@ if [ $PLATFORM = 'Darwin' ]; then
   VERSION=`git --version | cut -d' '  -f3 -`
   source /usr/local/Cellar/git/$VERSION/etc/bash_completion.d/git-completion.bash
 elif [ $PLATFORM = 'Linux' ]; then
-  source /usr/share/bash-completion/git
+  if [[ -s /usr/share/bash-completion/git ]] ; then source /usr/share/bash-completion/git ; fi
 else
   source /c/Program\ Files\ \(x86\)/Git/etc/git-completion.bash
 fi
