@@ -70,7 +70,8 @@ function xtitle {  # change the title of your xterm* window
   echo -ne "\033]0;$1\007"
 }
 
-alias t=terminitor
+# Consular shortcut
+alias t=consular
 
 # Navigation -------------------------------------------------------
 alias ..='cd ..'
