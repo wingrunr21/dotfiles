@@ -101,7 +101,6 @@ alias sc='script/console' # rails: script/console
 alias sg='script/generate' # rails: script/generate
 alias sgs='script/generate scaffold' # rails: script/generate
 alias sgm='script/generate migration' # rails: script/generate
-alias sgns='script/generate nifty_scaffold' # use nifty_scaffold
 alias rdm='rake db:migrate'
 alias rdp='rake db:populate' # assuming a populate task exists
 alias rdr='rake db:reset' #reset db
@@ -114,13 +113,13 @@ alias rdc='rails dbconsole'
 alias rg='rails generate'
 alias rgs='rails generate scaffold'
 alias rgm='rails generate migration'
-alias rgns='rails generate nifty:scaffold'
 
 # Git
 alias gs="git status" # status of files
 alias ga="git add" # add a file to staging
 alias gr="git rm" # remove a file
 alias gc="git commit" # commit files to repo
+alias gcm="git commit -m" # commit files to repo
 alias gp="git push" # push to repo
 alias gpl="git pull --rebase" # pull from repo
 alias gpom="git push origin master" # typically to send to github
@@ -196,3 +195,7 @@ svgetinfo (){
 }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [ "$PLATFORM" = 'Darwin' ]; then
+  export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"
+fi

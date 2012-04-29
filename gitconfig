@@ -1,5 +1,5 @@
 [user]
-  name = Stafford Brunk
+	name = Stafford Brunk
   email = wingrunr21@gmail.com
 [core]
   excludesfile = ~/.gitignore_global
