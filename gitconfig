@@ -21,3 +21,5 @@
   unstage = reset HEAD
 [push]
   default = current
+[credential]
+	helper = osxkeychain

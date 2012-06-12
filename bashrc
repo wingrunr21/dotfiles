@@ -78,11 +78,11 @@ alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 
 if [ "$PLATFORM" = 'Darwin' ]; then
-  alias sites='cd ~/Sites'
-  alias proj='cd ~/Projects'
+  function sites() { cd ~/Sites/$@; }
+  function proj() { cd ~/Projects/$@; }
 elif [ "$PLATFORM" = 'Linux' ]; then
-  alias sites='cd ~/sites'
-  alias proj='cd ~/projects'
+  function sites() { cd ~/sites/$@; }
+  function proj() { cd ~/projects/$@; }
 else
   alias sites='cd /f/documents/sites'
   alias proj='cd /f/documents/projects'
@@ -138,6 +138,8 @@ alias top='top -o cpu'
 alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
+alias b='bundle exec'
+alias l='lunchy'
 
 # Fix for ack being named ack-grep on Ubuntu
 which ack-grep &> /dev/null
@@ -193,8 +195,6 @@ svgetinfo (){
  	sv info $@
 	sv log $@
 }
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 if [ "$PLATFORM" = 'Darwin' ]; then
   export XML_CATALOG_FILES="/usr/local/etc/xml/catalog"

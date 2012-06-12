@@ -34,15 +34,5 @@ echo -e "Kernel Information: " `uname -smr`
 echo -ne "Uptime: "; uptime
 echo -ne "Server time is: "; date
 
-#Load pik or RVM
-if [ $PLATFORM = 'Darwin' ]; then
-  if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
-elif [ $PLATFORM = 'Linux' ]; then
-  if [[ -s "$HOME/.rvm/scripts/rvm" ]]  ; then source "$HOME/.rvm/scripts/rvm" ; fi
-else
-  if [[ -s "$USERPROFILE/.pik/.pikrc" ]]  ; then source "$USERPROFILE/.pik/.pikrc" ; fi
-fi
-
-if [ "$rvm_path" ]; then
-  [[ -r $rvm_path/scripts/completion ]] && . $rvm_path/scripts/completion
-fi
+# load rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
