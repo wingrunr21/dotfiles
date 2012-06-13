@@ -25,6 +25,9 @@ nmap <leader>l :set list!<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Support for Marked.app
+:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
 

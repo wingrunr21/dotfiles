@@ -68,6 +68,7 @@ alias top='top -o cpu'
 alias systail='tail -f /var/log/system.log'
 alias m='more'
 alias df='df -h'
+alias marked="open -a Marked" # add a marked command to open markdown files in Marked
 
 # Kill the interactive aliases
 unalias rm
