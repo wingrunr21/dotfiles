@@ -33,7 +33,8 @@ zstyle ':omz:load' omodule \
   'prompt' \
   'ruby' \
   'osx' \
-  'git'
+  'git' \
+  'node'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
@@ -80,14 +81,6 @@ unalias ln
 which ack-grep &> /dev/null
 if [ $? -eq 0 ]; then
   alias ack='ack-grep'
-fi
-
-# Editors ----------------------------------------------------------
-if [[ "$OSTYPE" == darwin* ]]; then
-  export EDITOR='mvim -f'
-  export VISUAL='mvim -f'
-elif [[ "$OSTYPE" == linux* ]]; then
-  export EDITOR='vim'
 fi
 
 if [[ "$OSTYPE" == darwin* ]]; then

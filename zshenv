@@ -54,9 +54,13 @@ if [[ -z "$LANG" ]]; then
   eval "$(locale)"
 fi
 
-# Editors
-export EDITOR='nano'
-export VISUAL='nano'
+# Editors ----------------------------------------------------------
+if [[ "$OSTYPE" == darwin* ]]; then
+  export EDITOR='mvim -f'
+  export VISUAL='mvim -f'
+elif [[ "$OSTYPE" == linux* ]]; then
+  export EDITOR='vim'
+fi
 export PAGER='less'
 
 # Browser (Default)
@@ -76,3 +80,5 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
+# rbenv must go here
+eval "$(rbenv init -)"
