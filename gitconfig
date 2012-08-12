@@ -4,6 +4,8 @@
 [core]
   excludesfile = ~/.gitignore_global
   preloadIndex = true
+[merge]
+  tool = opendiff
 [diff]
   wordRegex = [^[:space:]]
 [format]
@@ -23,3 +25,11 @@
   default = current
 [credential]
 	helper = osxkeychain
+[url "git@heroku.com:"]
+  insteadOf = heroku:
+[url "git://github.com/"]
+  # Read-only
+  insteadOf = gh:
+[url "git@github.com:"]
+  # With write access
+  insteadOf = wgh:
