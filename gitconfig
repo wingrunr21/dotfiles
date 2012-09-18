@@ -33,3 +33,5 @@
 [url "git@github.com:"]
   # With write access
   insteadOf = wgh:
+[remote "origin"]
+	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
