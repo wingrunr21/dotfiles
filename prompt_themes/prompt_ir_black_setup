@@ -16,21 +16,21 @@ function prompt_ir_black_setup {
   add-zsh-hook precmd prompt_ir_black_precmd
 
   # Text
-  zstyle ':omz:module:git' action '%s'
-  zstyle ':omz:module:git' commit '(%.7c)'
-  zstyle ':omz:module:git' branch '%b'
+  zstyle ':prezto:module:git' action '%s'
+  zstyle ':prezto:module:git' commit '(%.7c)'
+  zstyle ':prezto:module:git' branch '%b'
 
   # Indicators
-  zstyle ':omz:module:git' added ' %%B%F{green}✚%f%%b'
-  zstyle ':omz:module:git' ahead ' %%B%F{yellow}⬆%f%%b'
-  zstyle ':omz:module:git' behind ' %%B%F{yellow}⬇%f%%b'
-  zstyle ':omz:module:git' deleted ' %%B%F{red}✖%f%%b'
-  zstyle ':omz:module:git' modified ' %%B%F{blue}✱%f%%b'
-  zstyle ':omz:module:git' renamed ' %%B%F{magenta}➜%f%%b'
-  zstyle ':omz:module:git' stashed ' %%B%F{cyan}✭%f%%b'
-  zstyle ':omz:module:git' unmerged ' %%B%F{yellow}═%f%%b'
-  zstyle ':omz:module:git' untracked ' %%B%F{white}◼%f%%b'
-  zstyle ':omz:module:git' info \
+  zstyle ':prezto:module:git' added ' %%B%F{green}✚%f%%b'
+  zstyle ':prezto:module:git' ahead ' %%B%F{yellow}⬆%f%%b'
+  zstyle ':prezto:module:git' behind ' %%B%F{yellow}⬇%f%%b'
+  zstyle ':prezto:module:git' deleted ' %%B%F{red}✖%f%%b'
+  zstyle ':prezto:module:git' modified ' %%B%F{blue}✱%f%%b'
+  zstyle ':prezto:module:git' renamed ' %%B%F{magenta}➜%f%%b'
+  zstyle ':prezto:module:git' stashed ' %%B%F{cyan}✭%f%%b'
+  zstyle ':prezto:module:git' unmerged ' %%B%F{yellow}═%f%%b'
+  zstyle ':prezto:module:git' untracked ' %%B%F{white}◼%f%%b'
+  zstyle ':prezto:module:git' info \
        'prompt'  ' %F{red}($(coalesce "%b" "%c|%s"))' \
        'rprompt' '%A%B%S%a%d%m%r%U%u'
 
