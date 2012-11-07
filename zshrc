@@ -20,6 +20,8 @@ alias gs="git status" # status of files
 alias gl="git gl" # pretty log (specs in .gitconfig)
 alias gd="git diff" # diff a file
 
+alias be="bundle exec"
+
 # Misc
 alias g='grep -i'  # Case insensitive grep
 alias f='find . -iname'
