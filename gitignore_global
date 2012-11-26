@@ -33,3 +33,7 @@
 ehthumbs.db
 Thumbs.db
 *.esproj
+
+# Ruby stuff #
+##############
+.rbx
