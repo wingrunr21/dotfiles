@@ -17,8 +17,6 @@ colorscheme ir_black
 let mapleader = ","
 imap jj <Esc>
 
-let NERDTreeChDirMode=2
-
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 
