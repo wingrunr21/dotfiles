@@ -40,6 +40,7 @@ path=(
   /usr/local/share/npm/bin
   /usr/{bin,sbin}
   /{bin,sbin}
+  $HOME/.rbenv/bin
   $path
 )
 
