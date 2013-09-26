@@ -4,8 +4,8 @@ else
   source ~/.vim/vimrc
 end
 
-" Run syntastic against a 1.9 ruby
-let g:syntastic_ruby_exec = '~/.rbenv/versions/1.9.3-p392/bin/ruby'
+" Run syntastic against the default rbenv ruby
+let g:syntastic_ruby_exec = 'ruby'
 
 colorscheme ir_black
 
