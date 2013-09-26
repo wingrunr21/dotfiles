@@ -1,13 +1,9 @@
 [user]
-	name = Stafford Brunk
+  name = Stafford Brunk
   email = wingrunr21@gmail.com
 [core]
-  excludesfile = ~/.gitignore_global
+  excludesfile = /Users/wingrunr21/.gitignore_global
   preloadIndex = true
-[merge]
-  tool = opendiff
-[diff]
-  wordRegex = [^[:space:]]
 [format]
   pretty = %Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset
 [color]
@@ -24,7 +20,7 @@
 [push]
   default = current
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [url "git@heroku.com:"]
   insteadOf = heroku:
 [url "git://github.com/"]
@@ -33,5 +29,16 @@
 [url "git@github.com:"]
   # With write access
   insteadOf = wgh:
-[remote "origin"]
-	fetch = +refs/pull/*/head:refs/remotes/origin/pr/*
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+[diff]
+  tool = Kaleidoscope
+[difftool]
+  prompt = false
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+  trustExitCode = true
+[mergetool]
+  prompt = false
+[merge]
+  tool = Kaleidoscope
