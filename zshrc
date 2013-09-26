@@ -3,8 +3,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Consular shortcut
-alias t=consular
+# Tree shortcut
+alias tr=tree
+alias c=consular
 
 if [[ "$OSTYPE" == darwin* ]]; then
   function sites() { cd ~/Sites/$@; }
