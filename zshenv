@@ -80,8 +80,9 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-# rbenv must go here
-eval "$(rbenv init -)"
+# chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
 
 # Use homebrew python
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
