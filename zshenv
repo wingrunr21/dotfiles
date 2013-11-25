@@ -84,5 +84,7 @@ fi
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
+chruby ruby-2.0
+
 # Use homebrew python
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
