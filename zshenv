@@ -40,7 +40,6 @@ path=(
   /usr/local/share/npm/bin
   /usr/{bin,sbin}
   /{bin,sbin}
-  $HOME/.rbenv/bin
   $path
 )
 
@@ -84,7 +83,14 @@ fi
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
-chruby ruby-2.0
-
 # Use homebrew python
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+
+# Go projects
+export GOPATH=/Users/wingrunr21/Projects/go
+
+# Android Home
+export ANDROID_HOME=/usr/local/opt/android-sdk
+
+# Vagrant
+export VAGRANT_DEFAULT_PROVIDER=parallels

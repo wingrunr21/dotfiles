@@ -7,13 +7,18 @@ fi
 alias tr=tree
 alias c=consular
 
-if [[ "$OSTYPE" == darwin* ]]; then
-  function sites() { cd ~/Sites/$@; }
-  function proj() { cd ~/Projects/$@; }
-elif [[ "$OSTYPE" == linux* ]]; then
-  function sites() { cd ~/sites/$@; }
-  function proj() { cd ~/projects/$@; }
-fi
+# Directory shortcuts with completion
+# Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
+function sites() { cd ~/Sites/$1; }
+_sites() { _files -W ~/Sites }
+compdef _sites sites
+
+function proj() { cd ~/Projects/$@; }
+_proj() { _files -W ~/Projects }
+compdef _proj proj
+
+# zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Git
 # stomp on the ones made by oh-my-zsh
@@ -22,6 +27,8 @@ alias gl="git gl" # pretty log (specs in .gitconfig)
 alias gd="git diff" # diff a file
 
 alias be="bundle exec"
+
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 # Misc
 alias g='grep -i'  # Case insensitive grep
