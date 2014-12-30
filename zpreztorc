@@ -19,6 +19,9 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # Set the Zsh functions to load (man zshcontrib).
 # zstyle ':prezto:load' zfunction 'zargs' 'zmv'
 
+# Set autoswitch for chruby
+zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
+
 # Set the Oh My Zsh modules to load (browse modules).
 # The order matters.
 zstyle ':prezto:load' pmodule \
@@ -34,7 +37,8 @@ zstyle ':prezto:load' pmodule \
   'rails' \
   'osx' \
   'git' \
-  'node'
+  'node' \
+  'homebrew'
 
 # Set the prompt theme to load.
 # Setting it to 'random' loads a random theme.
@@ -44,7 +48,7 @@ zstyle ':prezto:module:prompt' theme 'ir_black'
 
 
 # Enable ssh-agent forwarding.
-# zstyle ':prezto:module:ssh-agent' forwarding 'yes'
+zstyle ':prezto:module:ssh-agent' forwarding 'yes'
 
 # Set ssh-agent identities to load.
-# zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
+zstyle ':prezto:module:ssh-agent' identities 'id_rsa' 'id_rsa2' 'id_github'
