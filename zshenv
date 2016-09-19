@@ -79,10 +79,6 @@ if (( $+commands[lesspipe.sh] )); then
   export LESSOPEN='| /usr/bin/env lesspipe.sh %s 2>&-'
 fi
 
-# chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
-
 # Use homebrew python
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
@@ -94,3 +90,12 @@ export ANDROID_HOME=/usr/local/opt/android-sdk
 
 # Vagrant
 export VAGRANT_DEFAULT_PROVIDER=parallels
+
+# Docker
+#export DOCKER_TLS_VERIFY="1"
+#export DOCKER_HOST="tcp://10.211.55.44:2376"
+#export DOCKER_CERT_PATH="/Users/wingrunr21/.docker/machine/machines/docker-dev"
+#export DOCKER_MACHINE_NAME="docker-dev"
+
+# Fix PATH being screwed up
+export OLDPATH=$PATH && unset PATH && export PATH=$OLDPATH
