@@ -5,7 +5,6 @@ fi
 
 # Tree shortcut
 alias tr=tree
-alias c=consular
 
 # Directory shortcuts with completion
 # Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
