@@ -2,6 +2,9 @@
 # User configuration sourced by interactive shells
 #
 
+# Custom zfunctions
+fpath=( "$HOME/.zfunctions" $fpath )
+
 # Prompt setup
 BLOX_CONF__ONELINE=true
 BLOX_CONF__NEWLINE=false
@@ -18,3 +21,30 @@ fi
 
 # Setup blox prompt
 source ~/dotfiles/prompts/blox/blox.zsh
+
+# chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# Directory shortcuts with completion
+# Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
+function sites() { cd ~/Sites/$1; }
+_sites() { _files -W ~/Sites }
+compdef _sites sites
+
+function proj() { cd ~/Projects/$@; }
+_proj() { _files -W ~/Projects }
+compdef _proj proj
+
+# Aliases
+
+# Git
+alias gs="git status" # status of files
+alias gl="git gl" # pretty log (specs in .gitconfig)
+alias gd="git diff" # diff a file
+
+# Bundler
+alias be="bundle exec"
+
+# Npm
+alias npm-exec='PATH=$(npm bin):$PATH'
