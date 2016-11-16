@@ -1,6 +1,7 @@
 [user]
   name = Stafford Brunk
   email = wingrunr21@gmail.com
+  signingkey = wingrunr21@gmail.com
 [core]
   excludesfile = /Users/wingrunr21/.gitignore_global
   preloadIndex = true
@@ -17,6 +18,7 @@
 [alias]
   gl = log --graph --abbrev-commit --date=relative
   unstage = reset HEAD
+  pr = "!f() { git fetch origin pull/$1/head:pr-$1 && git checkout pr-$1; }; f"
 [push]
   default = current
 [credential]
@@ -29,19 +31,11 @@
 [url "git@github.com:"]
   # With write access
   insteadOf = wgh:
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-  tool = Kaleidoscope
 [difftool]
   prompt = false
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
 [mergetool]
   prompt = false
-[merge]
-  tool = Kaleidoscope
-[filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+[commit]
+  gpgsign = true
+[gpg]
+  program = /usr/local/bin/gpg2
