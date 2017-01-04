@@ -2,7 +2,7 @@
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # Go projects
-export GOPATH=/Users/wingrunr21/Projects/go
+export GOPATH=/Users/$(whoami)/Projects/go
 
 # Android Home
 export ANDROID_HOME=/usr/local/opt/android-sdk
