@@ -4,7 +4,7 @@ module.exports = {
     fontSize: 12,
 
     // font family with optional fallbacks
-    fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: 'Hasklig Nerd Font, Menlo, DejaVu Sans Mono, Lucida Console, monospace',
 
     // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
     cursorColor: 'rgba(248,28,229,0.75)',
@@ -25,7 +25,11 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: '',
+    termCSS: `
+      x-screen x-row {
+        font-variant-ligatures: initial;
+      }
+    `,
 
     // custom padding (css format, i.e.: `top right bottom left`)
     padding: '12px 14px',
@@ -71,7 +75,8 @@ module.exports = {
   plugins: [
     'hypercwd',
     'hyperterm-1password',
-    'hyperterm-ir-black'
+    'hyperterm-ir-black',
+    'hyperterm-dibdabs'
   ],
 
   // in development, you can create a directory under
