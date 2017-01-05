@@ -32,7 +32,7 @@ module.exports = {
     `,
 
     // custom padding (css format, i.e.: `top right bottom left`)
-    padding: '12px 14px',
+    //padding: '12px 14px',
 
     // default window size
     // windowSize: [850, 425],
