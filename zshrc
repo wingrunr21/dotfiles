@@ -13,9 +13,13 @@ BLOX_CONF__BLOCK_PREFIX='('
 BLOX_CONF__BLOCK_SUFFIX=')'
 BLOX_BLOCK__RUBY_SYMBOL=
 BLOX_BLOCK__NODEJS_SYMBOL=
+BLOX_BLOCK__GIT_CLEAN_SYMBOL=✔%
 BLOX_SEG__UPPER_RIGHT=(blox_block__bgjobs blox_block__nodejs blox_block__ruby)
 BLOX_BLOCK__CWD_TRUNC=0
 BLOX_BLOCK__CWD_COLOR='green'
+
+# Homebrew zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
