@@ -1,7 +1,6 @@
 [user]
   name = Stafford Brunk
   email = wingrunr21@gmail.com
-  signingkey = wingrunr21@gmail.com
 [core]
   excludesfile = /Users/wingrunr21/.gitignore_global
   preloadIndex = true
