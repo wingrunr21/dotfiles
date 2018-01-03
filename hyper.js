@@ -25,11 +25,7 @@ module.exports = {
     css: '',
 
     // custom css to embed in the terminal window
-    termCSS: `
-      x-screen x-row {
-        font-variant-ligatures: initial;
-      }
-    `,
+    termCSS: ``,
 
     // custom padding (css format, i.e.: `top right bottom left`)
     //padding: '12px 14px',
@@ -76,7 +72,8 @@ module.exports = {
     'hypercwd',
     'hyperterm-1password',
     'hyperterm-ir-black',
-    'hyperterm-dibdabs'
+    'hyperterm-dibdabs',
+    'hyper-ligatures'
   ],
 
   // in development, you can create a directory under
