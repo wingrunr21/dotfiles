@@ -12,6 +12,9 @@ module.exports = {
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'UNDERLINE',
 
+    // blinky blink
+    // cursorBlink: true,
+
     // color of the text
     // foregroundColor: '#fff',
 
@@ -62,17 +65,13 @@ module.exports = {
     // for advanced config flags please refer to https://hyperterm.org/#cfg
   },
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
   plugins: [
     'hypercwd',
     'hyperterm-1password',
     'hyperterm-ir-black',
     'hyperterm-dibdabs',
+    'hyper-search',
+    'hyperterm-tabs',
     'hyper-ligatures'
   ],
 
