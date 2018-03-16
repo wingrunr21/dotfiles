@@ -13,7 +13,7 @@ BLOX_CONF__BLOCK_PREFIX='('
 BLOX_CONF__BLOCK_SUFFIX=')'
 BLOX_BLOCK__RUBY_SYMBOL=
 BLOX_BLOCK__NODEJS_SYMBOL=
-BLOX_BLOCK__GIT_CLEAN_SYMBOL=✔%
+BLOX_BLOCK__GIT_CLEAN_SYMBOL=✔
 BLOX_SEG__UPPER_RIGHT=(blox_block__bgjobs blox_block__nodejs blox_block__ruby)
 BLOX_BLOCK__CWD_TRUNC=0
 BLOX_BLOCK__CWD_COLOR='green'
@@ -32,6 +32,9 @@ source ~/dotfiles/prompts/blox/blox.zsh
 # chruby
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
+
+# Setup zsh-iterm-touchbar
+source ~/dotfiles/zsh-iterm-touchbar/zsh-iterm-touchbar.plugin.zsh
 
 # Directory shortcuts with completion
 # Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
