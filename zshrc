@@ -61,9 +61,6 @@ alias gd="git diff" # diff a file
 # Bundler
 alias be="bundle exec"
 
-# Npm
-alias npm-exec='PATH=$(npm bin):$PATH'
-
 # GPG setup
 if [ -f ~/.gnupg/S.gpg-agent ]; then
   eval $(gpg-agent --daemon)
