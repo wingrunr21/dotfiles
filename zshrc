@@ -33,6 +33,10 @@ source ~/dotfiles/prompts/blox/blox.zsh
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/opt/chruby/share/chruby/auto.sh
 
+# chnode
+source /usr/local/opt/chnode/chnode.sh
+source /usr/local/opt/chnode/auto.sh
+
 # Setup zsh-iterm-touchbar
 source ~/dotfiles/zsh-iterm-touchbar/zsh-iterm-touchbar.plugin.zsh
 
