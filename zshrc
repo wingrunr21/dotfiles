@@ -38,9 +38,6 @@ source /usr/local/opt/chruby/share/chruby/auto.sh
 source /usr/local/opt/chnode/chnode.sh
 source /usr/local/opt/chnode/auto.sh
 
-# Setup zsh-iterm-touchbar
-source ~/dotfiles/zsh-iterm-touchbar/zsh-iterm-touchbar.plugin.zsh
-
 # Directory shortcuts with completion
 # Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
 function sites() { cd ~/Sites/$1; }
