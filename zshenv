@@ -1,5 +1,5 @@
 # Use homebrew python
-export PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PIPENV_VENV_IN_PROJECT=true
 
 # Go projects
 export GOPATH=/Users/$(whoami)/Projects/go
