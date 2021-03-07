@@ -3,7 +3,8 @@
 #
 
 # Homebrew zsh-completions
-fpath=(/usr/local/share/zsh-completions $fpath)
+# Keep this first so Zim's completion module picks this stuff up
+FPATH=${BREW_PREFIX}/share/zsh/site-functions:${BREW_PREFIX}/share/zsh-completions:$FPATH
 
 # -----------------
 # Zsh configuration
