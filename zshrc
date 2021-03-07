@@ -145,12 +145,13 @@ source ~/dotfiles/prompts/blox/blox.zsh
 unset BLOX_CONF__PROMPT_PREFIX
 
 # chruby
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+source ${BREW_PREFIX}/opt/chruby/share/chruby/chruby.sh
+source ${BREW_PREFIX}/opt/chruby/share/chruby/auto.sh
 
-# chnode
-source /usr/local/opt/chnode/chnode.sh
-source /usr/local/opt/chnode/auto.sh
+# chnode - https://github.com/tkareine/chnode
+source ${BREW_PREFIX}/opt/chnode/share/chnode/chnode.sh
+source ${BREW_PREFIX}/opt/chnode/share/chnode/auto.sh
+precmd_functions+=(chnode_auto)
 
 # Directory shortcuts with completion
 # Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
