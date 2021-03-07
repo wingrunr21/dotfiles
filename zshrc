@@ -124,10 +124,6 @@ bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# Custom zfunctions
-fpath=( "$HOME/.zfunctions" $fpath )
-source ~/.zfunctions/ruby.zsh
-
 # chruby
 source ${BREW_PREFIX}/opt/chruby/share/chruby/chruby.sh
 source ${BREW_PREFIX}/opt/chruby/share/chruby/auto.sh
