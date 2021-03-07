@@ -15,7 +15,6 @@ ln -sf ${DOTFILES}/vimrc ${HOME}/.vimrc
 # zsh
 ln -sf ${DOTFILES}/zlogin ${HOME}/.zlogin
 ln -sf ${DOTFILES}/zshenv ${HOME}/.zshenv
-ln -sf ${DOTFILES}/zfunctions ${HOME}/.zfunctions
 touch ${HOME}/.zshrc
 echo -e "BREW_PREFIX=$(brew --prefix)\nsource ${DOTFILES}/zshrc" >> ${HOME}/.zshrc
 

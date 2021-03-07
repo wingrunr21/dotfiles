@@ -128,22 +128,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 fpath=( "$HOME/.zfunctions" $fpath )
 source ~/.zfunctions/ruby.zsh
 
-# Prompt setup
-BLOX_CONF__ONELINE=true
-BLOX_CONF__BLOCK_PREFIX='('
-BLOX_CONF__BLOCK_SUFFIX=')'
-BLOX_BLOCK__RUBY_SYMBOL=
-BLOX_BLOCK__NODEJS_SYMBOL=
-BLOX_BLOCK__GIT_CLEAN_SYMBOL=✔
-BLOX_SEG__UPPER_LEFT=(host cwd git)
-BLOX_SEG__UPPER_RIGHT=(blox_block__bgjobs blox_block__nodejs blox_block__ruby)
-BLOX_BLOCK__CWD_TRUNC=100
-BLOX_BLOCK__CWD_COLOR='green'
-
-# Setup blox prompt
-source ~/dotfiles/prompts/blox/blox.zsh
-unset BLOX_CONF__PROMPT_PREFIX
-
 # chruby
 source ${BREW_PREFIX}/opt/chruby/share/chruby/chruby.sh
 source ${BREW_PREFIX}/opt/chruby/share/chruby/auto.sh

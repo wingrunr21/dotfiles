@@ -1,3 +1,0 @@
-[submodule "prompts/blox"]
-	path = prompts/blox
-	url = https://github.com/yardnsm/blox-zsh-theme.git
