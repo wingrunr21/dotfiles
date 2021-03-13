@@ -133,6 +133,9 @@ source ${BREW_PREFIX}/opt/chnode/share/chnode/chnode.sh
 source ${BREW_PREFIX}/opt/chnode/share/chnode/auto.sh
 precmd_functions+=(chnode_auto)
 
+# node-build helper
+function node-install() { node-build ${1} ${HOME}/.nodes/${1} }
+
 # Directory shortcuts with completion
 # Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
 function sites() { cd ~/Sites/$1; }
