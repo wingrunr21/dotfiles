@@ -156,6 +156,7 @@ alias git=hub
 alias gs="git status" # status of files
 alias gl="git gl" # pretty log (specs in .gitconfig)
 alias gd="git diff" # diff a file
+alias gco="git checkout"
 
 # Bundler
 alias be="bundle exec"
