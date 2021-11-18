@@ -152,7 +152,6 @@ compdef _proj proj
 # Aliases
 
 # Git
-alias git=hub
 alias gs="git status" # status of files
 alias gl="git gl" # pretty log (specs in .gitconfig)
 alias gd="git diff" # diff a file
