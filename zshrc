@@ -124,17 +124,8 @@ bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# chruby
-source ${BREW_PREFIX}/opt/chruby/share/chruby/chruby.sh
-source ${BREW_PREFIX}/opt/chruby/share/chruby/auto.sh
-
-# chnode - https://github.com/tkareine/chnode
-source ${BREW_PREFIX}/opt/chnode/share/chnode/chnode.sh
-source ${BREW_PREFIX}/opt/chnode/share/chnode/auto.sh
-precmd_functions+=(chnode_auto)
-
-# node-build helper
-function node-install() { node-build ${1} ${HOME}/.nodes/${1} }
+# rtx
+eval "$(~/bin/rtx activate zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
