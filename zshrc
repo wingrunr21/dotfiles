@@ -125,7 +125,7 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 # rtx
-eval "$(~/bin/rtx activate zsh)"
+eval "$(rtx activate zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
