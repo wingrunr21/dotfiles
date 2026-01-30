@@ -124,11 +124,11 @@ bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
-# rtx
-eval "$(rtx activate zsh)"
+# mise
+(( $+commands[mise] )) && eval "$(mise activate zsh)"
 
 # direnv
-eval "$(direnv hook zsh)"
+(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
 
 # Directory shortcuts with completion
 # Thanks to http://blog.mavjs.org/2012/07/zsh-autocomplete-function-to-change-and.html
@@ -155,3 +155,6 @@ alias be="bundle exec"
 if [ -f ~/.gnupg/S.gpg-agent ]; then
   eval $(gpg-agent --daemon)
 fi
+
+# Add ~/.local/bin to PATH
+PATH=${PATH}:${HOME}/.local/bin
